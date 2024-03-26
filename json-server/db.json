@@ -1,0 +1,102 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "Name": "Sergey",
+      "LastName": "Victorovich",
+      "Surname": "Petrov",
+      "RNOKPP": 123567893,
+      "Phone": 630533446,
+      "Email": "petrov@com"
+    },
+    {
+      "id": 2,
+      "Name": "Sergey",
+      "LastName": "Victorovich",
+      "Surname": "Petrov",
+      "RNOKPP": 123567893,
+      "Phone": 630533446,
+      "Email": "petrov@com"
+    },
+    {
+      "id": 3,
+      "Name": "45",
+      "LastName": "34",
+      "Surname": "333",
+      "RNOKPP": 123567893,
+      "Phone": 630533446,
+      "Email": "petrov@com"
+    },
+    {
+      "id": 4,
+      "Name": "Sergey",
+      "LastName": "Victorovich",
+      "Surname": "Petrov",
+      "RNOKPP": 123567893,
+      "Phone": 630533446,
+      "Email": "petrov@com"
+    },
+    {
+      "id": 5,
+      "Name": "Лола",
+      "LastName": "Лоловна",
+      "Surname": "Лол",
+      "RNOKPP": 123567893,
+      "Phone": 630533446,
+      "Email": "petrov@com"
+    },
+    {
+      "id": 6,
+      "Name": "kjg",
+      "LastName": "kjg",
+      "Surname": "",
+      "Email": ""
+    },
+    {
+      "id": 7,
+      "Name": "lll",
+      "LastName": "",
+      "Surname": "",
+      "Email": ""
+    },
+    {
+      "id": 8,
+      "Name": "456",
+      "LastName": "",
+      "Surname": "",
+      "Email": ""
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "clientId": 1,
+      "time": "2024-03-25T10:00:00",
+      "service": "Консультация"
+    },
+    {
+      "id": "2",
+      "clientId": 2,
+      "time": "2024-03-25T11:00:00",
+      "service": "Консультация"
+    },
+    {
+      "id": "3",
+      "clientId": 2,
+      "time": "2024-03-25T12:00:00",
+      "service": "Консультация"
+    },
+    {
+      "id": "4",
+      "clientId": 2,
+      "time": "2024-03-25T13:00:00",
+      "service": "Консультация"
+    },
+    {
+      "id": "5",
+      "clientId": 2,
+      "time": "2024-03-25T14:00:00",
+      "service": "Консультация"
+    }
+  ]
+}
