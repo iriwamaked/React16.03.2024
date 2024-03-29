@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import ky from "ky";
 import { Client } from "../../model/Client";
 import { AddNewClientModal } from "../Modal/AddNewClientModal";
-import { Events } from "../event";
 
-export function AddNewClient({success:boolean}) {
+
+export function AddNewClient({success}:{ success: () => void }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clients, setClients] = useState<Client[]>([]);
 
@@ -44,7 +44,7 @@ export function AddNewClient({success:boolean}) {
   
       // Отримуємо всі числові ідентифікатори, виключаючи не визначені
       const numericIds: number[] = allClients
-        .map(client => client.id)
+        .map(client => parseInt(client.id,10))
         .filter(id => typeof id === 'number') as number[]; // Використовуємо 'as number[]' для перетворення типу 'number | undefined' на 'number'
         console.log(numericIds);
       // Знаходимо максимальний числовий ідентифікатор клієнта
@@ -53,15 +53,15 @@ export function AddNewClient({success:boolean}) {
   
       // Визначаємо числовий ідентифікатор для нового клієнта
       const newClientId = maxClientId !== -Infinity ? maxClientId + 1 : 1;
-  
+     
       // Встановлюємо новому клієнту числовий ідентифікатор
-      newClientData.id = newClientId;
-  
+      newClientData.id = String(newClientId);
+      
       // Відправляємо POST-запит для додавання нового клієнта
       await ky.post("http://localhost:3001/clients", { json: newClientData });
       
       console.log("Нового клієнта успішно додано на сервер.");
-      
+      success();
     //   // Оновлюємо список клієнтів на сторінці
      
     } catch (error) {

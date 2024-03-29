@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ky from "ky";
 import { Client } from "../../model/Client";
 import { Modal } from "../Modal/Modal";
-import { Events } from "../event";
+
 import { AddNewClient } from "../AddNewClient/AddNewClient";
 
 
@@ -52,8 +52,11 @@ export function ListOfClients() {
   }
 
   const handleSaveChanges = async (updatedClient: Client) => {
+    console.log(updatedClient);
+    console.log(`Sending PATCH request to: http://localhost:3001/clients/${updatedClient.id}`);
     try {
-      await ky.patch(`http://localhost:3001/clients/${updatedClient.id}`, {
+      const url=`http://localhost:3001/clients/${updatedClient.id}`;
+      await ky.patch(url, {
         json: updatedClient,
       });
       console.log("Дані успішно оновлено на сервері.");
@@ -69,7 +72,7 @@ export function ListOfClients() {
     <div>
       <h2>Список клієнтів</h2>
       {error && <p>{error}</p>}
-      <AddNewClient success={undefined}></AddNewClient>
+      <AddNewClient success={UpdateClients}></AddNewClient>
       <table>
         <thead>
           <tr>
